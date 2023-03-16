@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div id="logo"><a th:href="@{/}"><img src="/img/logo.PNG" width="100px"></a></div>
+            <div id="log">
+                <div><a th:href="@{/member/login}" sec:authorize="isAnonymous()">LOGIN</a>
+                	<a th:href="@{/user/logout}" sec:authorize="isAuthenticated()">LOGOUT</a>
+                </div>
+                <div>CART</div>
+                <div>REVIEW</div>
+                <div><a th:href="@{/question/list}">Q & A</a></div>
+            </div>
+            <ul class="menu">
+                <li>
+                  <p>OUTER</p>
+                  <ul class="submenu">
+                    <li>코트</li>
+                    <li>패딩</li>
+                    <li>에코퍼</li>
+                    <li>자켓</li>
+                  </ul>
+                </li>
+                <li>
+                  <p>DRESS</p>
+                  <ul class="submenu">
+                    <li>롱</li>
+                    <li>미니</li>
+                    <li>H라인</li>
+                    <li>A라인</li>
+                  </ul>
+                </li>
+                <li>
+                    <p>KNIT/TEE</p>
+                    <ul class="submenu">
+                      <li>니트</li>
+                      <li>가디건</li>
+                      <li>티</li>
+                      <li></li>
+                    </ul>
+                  </li>
+                <li>
+                  <p>BLOUSE</p>
+                  <ul class="submenu">
+                    <li>무지</li>
+                    <li>셔츠</li>
+                    <li>프린트</li>
+                    <li>오프숄더</li>
+                  </ul>
+                </li>
+                <li>
+                    <p>PANTS</p>
+                  <ul class="submenu">
+                    <li>데님</li>
+                    <li>슬렉스</li>
+                    <li>숏팬츠</li>
+                    <li>기모</li>
+                  </ul>
+                </li>
+                <li>
+                  <p>SKIRTS</p>
+                  <ul class="submenu">
+                    <li>H라인</li>
+                    <li>A라인</li>
+                    <li>미니스커트</li>
+                    <li>롱스커트</li>
+                  </ul>
+                </li>
+                  <li>
+                    <p>ACC</p>
+                    <ul class="submenu">
+                      <li>악세사리</li>
+                      <li>스카프</li>
+                    </ul>
+                  </li>
+              </ul>
+        </header>
+        <th:block layout:fragment="content"></th:block>
+        </div>
+        
+        </body>
+            
+    <script>
+        var index = 0;
+        window.onload = function(){
+            slideShow();
+        }
+        
+        function slideShow() {
+        var i;
+        var x = document.getElementsByClassName("slide1");
+        
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        index++;
+        if (index > x.length) {
+            index = 1;  
+        }   
+        x[index-1].style.display = "block";
+        setTimeout(slideShow, 4000);
+        }
+
+        function GoTop() {
+            window.scrollTo({top:0, behavior:'smooth'});
+        }
+
+
+        $(window).on('load', function () {
+            load('#js-load', '2');
+            $("#js-btn-wrap .button").on("click", function () {
+                load('#js-load', '2', '#js-btn-wrap');
+            })
+        });
+        
+        function load(id, cnt, btn) {
+            var girls_list = id + " .js-load:not(.active)";
+            var girls_length = $(girls_list).length;
+            var girls_total_cnt;
+            if (cnt < girls_length) {
+                girls_total_cnt = cnt;
+            } else {
+                girls_total_cnt = girls_length;
+                $('.button').hide()
+            }
+            $(girls_list + ":lt(" + girls_total_cnt + ")").addClass("active");
+        }
+        
+        var pics = document.getElementsByClassName("pic");
+        var lightboxImage = document.getElementById("lightboxImage");
+        for(var i = 0; i < pics.length; i++){
+            pics[i].addEventListener("click", showLightbox);
+        }
+
+        function showLightbox(){
+            var bigLocation = this.getAttribute("data-src");  
+            lightboxImage.setAttribute("src", bigLocation)
+        }
+        
+
+
+        function count(type)  {
+        // 결과를 표시할 element
+        const resultElement = document.getElementById('c_result');
+
+        // 현재 화면에 표시된 값
+        let number = resultElement.innerText;
+    
+        // 더하기/빼기
+        if(type === 'plus') {
+        number = parseInt(number) + 1;
+        
+        }else if(type === 'minus')  {
+        number = parseInt(number) - 1;
+        
+        if(number <= 0 ){
+            number = 1;
+        }
+        }
+
+        // 수량 개수 출력
+        resultElement.innerText = number;
+
+        // 총 금액 출력
+        const price = document.getElementById('price').innerText;
+        let totalcost = number * price ;
+        document.getElementById('total');
+        total.textContent = totalcost.toLocaleString('ko-KR');
+    }
+        
+
+        
+
+    </script>
+    
+        </html>

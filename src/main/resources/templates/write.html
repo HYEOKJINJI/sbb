@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+			font-family: "serif";
+			background-color: white;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		li {
+			list-style: none;
+		}
+
+		header {
+			width: 1200px;
+			height: 90px;
+			position: fixed;
+			background-color: rgb(212, 211, 211);
+			margin-top: -10px;
+			z-index: 2;
+		}
+
+		main {
+			width: 1200px;
+			margin-top: 150px;
+		}
+
+		#log div {
+			float: left;
+			padding-right: 20px;
+			font-weight: bold;
+			cursor: pointer;
+
+		}
+
+		#category div {
+			font-weight: bold;
+			padding-top: 5px;
+			cursor: pointer;
+			transition-duration: 1s;
+			margin-top: 3px;
+			color: white;
+			width: 100px;
+		}
+
+		#logo {
+			margin: 10px 0 0 30px;
+			float: left;
+			width: 200px;
+			height: 40px;
+			font-size: 30px;
+			cursor: pointer;
+		}
+
+		#log {
+			float: right;
+			color: white;
+			position: absolute;
+			right: 0;
+		}
+
+		#log a {
+			color: white;
+		}
+
+		#sidemenu {
+			right: 0;
+			position: fixed;
+			top: 500px;
+		}
+
+		#sidemenu div {
+			cursor: pointer;
+		}
+
+		footer {
+			margin-top: 70px;
+			height: 90px;
+			width: 1200px;
+			background-color: rgb(224, 220, 220);
+		}
+
+		footer div {
+			float: left;
+		}
+
+		#logo2 {
+			margin-left: 30px;
+			font-size: 20px;
+			margin-top: 30px;
+		}
+
+		#addr {
+			margin-top: 50px;
+			margin-left: 100px;
+			font-size: 12px;
+			color: grey;
+		}
+
+		#addr span {
+			color: black;
+			font-weight: bold;
+		}
+
+		#sns {
+			float: right;
+			margin-top: 20px;
+		}
+
+		#wrap {
+			margin: 0 auto;
+			width: 1200px;
+			border: 1px solid rgb(224, 220, 220);
+		}
+
+		.menu>li {
+			float: left;
+			text-align: center;
+			width: 100px;
+			margin-left: 15px;
+			margin-right: 15px;
+			margin-top: 30px;
+			cursor: pointer;
+
+		}
+
+		.submenu>li {
+			line-height: 30px;
+			font-size: 14px;
+			margin-left: -25px;
+			width: 70px;
+			cursor: pointer;
+		}
+
+		.submenu {
+			height: 0;
+			overflow: hidden;
+		}
+
+		.menu>li:hover {
+			background-color: rgba(190, 186, 186, 0.837);
+			transition-duration: 0.5s;
+		}
+
+		.menu>li:hover .submenu {
+			height: 145px;
+			/*서브메뉴 li한개의 높이 50*5*/
+			transition-duration: 1s;
+		}
+
+		.submenu li {
+			width: 100px;
+			margin-left: -40px;
+		}
+
+		.submenu li:hover {
+			background-color: rgba(215, 211, 211, 0.837);
+
+		}
+
+
+
+		#lightbox img {
+			position: absolute;
+			z-index: -1;
+			margin-left: -600px;
+		}
+
+		#detail div {
+			float: left;
+			margin-top: 600px;
+			cursor: pointer;
+		}
+
+		#underline {
+			border-bottom: 1px solid grey;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		span {
+			margin: 13px;
+		}
+
+		#title {
+			font-size: 15px;
+			font-weight: bold;
+			font-family: '고딕';
+			margin: 13px;
+		}
+
+		#titlesub {
+			font-weight: lighter;
+			color: grey;
+			font-size: 13px;
+			padding-top: 5px;
+			margin: 13px;
+		}
+
+		#price1 {
+			font-size: 15px;
+			color: silver
+		}
+
+		#price2 {
+			font-size: 18px;
+		}
+
+		#addtocart {
+			border: none;
+			text-align: center;
+			background-color: rgb(183, 181, 181);
+			height: 50px;
+			color: white;
+			font-weight: bold;
+			padding-top: 25px;
+			margin: 13px;
+		}
+
+		#buynow {
+			border: none;
+			text-align: center;
+			background-color: rgb(140, 140, 140);
+			height: 50px;
+			color: white;
+			font-weight: bold;
+			padding-top: 25px;
+			margin: 13px;
+		}
+
+		#total {
+			font-weight: bold;
+		}
+
+		.board_subject {
+			font-size: 20px;
+			margin: 25px;
+
+		}
+
+		.board_content {
+			font-size: 20px;
+			position: absolute;
+			margin-left: -70px;
+			margin-top: 250px;
+		}
+
+		.subject-control {
+			width: 1000px;
+			height: 50px;
+			font-size: 20px;
+		}
+
+		.content-control {
+			width: 1000px;
+			height: 500px;
+			font-size: 20px;
+		}
+
+		.content {
+			margin-top: 30px;
+			text-align: center;
+
+		}
+
+		.subject {}
+
+		.write-btn {
+			border: none;
+			background-color: rgba(215, 211, 211, 0.837);
+			border-radius: 50px;
+			font-size: 20px;
+			margin-left: 950px;
+
+		}
+
+		.write-btn:hover {
+			background-color: rgb(153, 151, 151);
+		}
+
+		.cancle {
+			border: none;
+			background-color: rgba(215, 211, 211, 0.837);
+			border-radius: 50px;
+			font-size: 20px;
+		}
+
+		.cancle:hover {
+			background-color: rgb(153, 151, 151);
+		}
+
+		#secret {
+			background-color: white;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div id="wrap">
+		<header>
+			<div id="logo"><a href="index.html"><img src="/img/logo.PNG" width="100px"></a></div>
+			<div id="log">
+				<div><a href="login.html">LOGIN</a></div>
+				<div>CART</div>
+				<div>REVIEW</div>
+				<div>Q & A</div>
+			</div>
+			<ul class="menu">
+				<li>
+					<p>OUTER</p>
+					<ul class="submenu">
+						<li>코트</li>
+						<li>패딩</li>
+						<li>에코퍼</li>
+						<li>자켓</li>
+					</ul>
+				</li>
+				<li>
+					<p>DRESS</p>
+					<ul class="submenu">
+						<li>롱</li>
+						<li>미니</li>
+						<li>H라인</li>
+						<li>A라인</li>
+					</ul>
+				</li>
+				<li>
+					<p>KNIT/TEE</p>
+					<ul class="submenu">
+						<li>니트</li>
+						<li>가디건</li>
+						<li>티</li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<p>BLOUSE</p>
+					<ul class="submenu">
+						<li>무지</li>
+						<li>셔츠</li>
+						<li>프린트</li>
+						<li>오프숄더</li>
+					</ul>
+				</li>
+				<li>
+					<p>PANTS</p>
+					<ul class="submenu">
+						<li>데님</li>
+						<li>슬렉스</li>
+						<li>숏팬츠</li>
+						<li>기모</li>
+					</ul>
+				</li>
+				<li>
+					<p>SKIRTS</p>
+					<ul class="submenu">
+						<li>H라인</li>
+						<li>A라인</li>
+						<li>미니스커트</li>
+						<li>롱스커트</li>
+					</ul>
+				</li>
+				<li>
+					<p>ACC</p>
+					<ul class="submenu">
+						<li>악세사리</li>
+						<li>스카프</li>
+					</ul>
+				</li>
+			</ul>
+		</header>
+		<main>
+			<div class="board" style="align-items: center;">
+				<form th:object="${questionForm}" method="post">
+					<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+					<div class="subject">
+						<label for="subject" class="board_subject">제목</label>
+						<input type="text" th:field="*{subject}" class="subject-control">
+					</div>
+					<div class="content">
+						<label for="content" class="board_content">내용</label>
+						<textarea th:field="*{content}" class="content-control"></textarea>
+					</div>
+					<div class="write-btn" id="secret">
+						<input class="form-check-input" type="checkbox" id="secret" name="secret"
+							th:checked="${questionForm.secret}" />
+						<label class="form-check-label" for="secret">비밀글 설정</label>
+					</div>
+					<input type="hidden" th:field="*{secret}" />
+					<input type="submit" value="등록" class="write-btn">
+					<button type="button" value="취소" class="cancle">취소</button>
+				</form>
+			</div>
+
+		</main>
+		<footer>
+			<div id="logo2"><img src="/img/footerlogo.PNG" width="100px"></div>
+			<div id="addr">STORE <span>(주)DearU</span> &nbsp; &nbsp; &nbsp; OWNER 지혁진 &nbsp; &nbsp; &nbsp; COMPANY
+				REG.NO &nbsp; 123-45-67890<br>ADDRESS &nbsp; &nbsp; 12345 서울시 종로구 하이미디어 15층 &nbsp; &nbsp; &nbsp; MASTER
+				&nbsp; &nbsp; <span>지혁진 jhj930215@google.com</span></div>
+			<div id="sns">
+				<a href="#"><img src="/img/카카오톡.png" width="40px"></a>
+				<a href="#"><img src="/img/페이스북.png" width="40px"></a>
+				<a href="#"><img src="/img/인스타그램.png" width="40px"></a>
+			</div>
+		</footer>
+	</div>
+
+</body>
+
+</html>

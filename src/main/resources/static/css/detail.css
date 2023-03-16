@@ -1,0 +1,206 @@
+@charset "UTF-8";
+
+  body{
+            font-family: "serif";
+            background-color: white;
+        }
+        a{
+            text-decoration: none;
+        }
+        li{
+            list-style: none;
+        }
+
+        header{
+            width: 1200px;
+            height: 90px;
+            position: fixed;
+            background-color: rgb(212, 211, 211);
+            margin-top: -10px;
+            z-index: 2;
+        }
+        main{
+            width: 1200px;
+            height: 750px;
+            margin-top: 150px;
+        }
+        #log div{
+            float: left;
+            padding-right: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            
+        }
+        #category div{
+            font-weight: bold;
+            padding-top: 5px;
+            cursor: pointer;
+            transition-duration: 1s;
+            margin-top: 3px;
+            color: white;
+            width: 100px;
+        }
+        #logo{
+            margin: 10px 0 0 30px;
+            float: left;
+            width: 200px;
+            height: 40px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        #log{
+            float: right;
+            color: white;
+            position: absolute;
+            right: 0;
+        }
+        #log a{
+            color: white;
+        }
+        #sidemenu{
+            right: 0;
+            position: fixed;
+            top: 500px;
+        }
+        #sidemenu div{
+            cursor: pointer;
+        }
+        footer{
+            margin-top: 70px;
+            height: 90px;
+            width: 1200px;
+            background-color: rgb(224, 220, 220);
+        }
+        footer div{
+            float: left;
+        }
+        #logo2{
+            margin-left: 30px;
+            font-size: 20px;
+            margin-top: 30px;
+        }
+        #addr{
+            margin-top: 50px;
+            margin-left: 100px;
+            font-size: 12px;
+            color: grey;
+        }
+        #addr span{
+            color: black;
+            font-weight: bold;
+        }
+        #sns{
+            float: right;
+            margin-top: 20px;
+        }
+        #wrap{
+            margin: 0 auto;
+            width: 1200px;
+            border: 1px solid rgb(224, 220, 220);
+        }
+
+        .menu > li{
+            float: left;
+            text-align: center;
+            width: 100px;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-top: 30px;
+            cursor: pointer;
+
+        }
+        .submenu > li{
+            line-height: 30px;
+            font-size: 14px;
+            margin-left: -25px;
+            width: 70px;
+            cursor: pointer;
+        }
+        .submenu {
+            height: 0;
+            overflow: hidden;
+        }
+        .menu > li:hover {
+            background-color: rgba(190, 186, 186, 0.837);
+            transition-duration: 0.5s;
+        }
+
+        .menu > li:hover .submenu {
+            height: 145px; /*서브메뉴 li한개의 높이 50*5*/
+            transition-duration: 1s;
+        }
+        .submenu li {
+            width: 100px;
+            margin-left: -40px;
+        }
+        .submenu li:hover{
+            background-color: rgba(215, 211, 211, 0.837);
+
+        }
+
+
+
+        #lightbox img{
+            position: absolute;     
+            z-index: -1;
+            margin-left: -600px;
+        }
+        #detail div{
+            float: left;
+            margin-top: 600px;
+            cursor: pointer;
+        }
+        #underline{
+            border-bottom: 1px solid grey;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        span{
+            margin: 13px;
+        }
+        #title{
+            font-size: 15px;
+            font-weight: bold;  
+            font-family: '고딕';    
+            margin: 13px;      
+        }
+        #titlesub{
+            font-weight: lighter;
+            color: grey;
+            font-size: 13px;
+            padding-top: 5px;
+            margin: 13px;
+        }
+        #price1{
+            font-size: 15px;
+            color: silver
+        }
+        #price2{
+            font-size: 18px;
+        }
+        #addtocart{
+            border: none;
+            text-align: center;
+            background-color: rgb(183, 181, 181);
+            height: 50px;
+            color: white;
+            font-weight: bold;
+            padding-top: 25px;
+            margin: 13px;
+        }
+        #buynow{
+            border: none;
+            text-align: center;
+            background-color: rgb(140, 140, 140);
+            height: 50px;
+            color: white;
+            font-weight: bold;
+            padding-top: 25px;
+            margin: 13px;
+        }
+        #total{
+            font-weight: bold;
+        }
+        
+        
+        

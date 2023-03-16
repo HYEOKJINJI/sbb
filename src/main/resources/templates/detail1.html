@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/detail.css}">
+</head>
+<body>
+      <div layout:fragment="content"> 
+    <main>
+        <div id="detail">
+            <div><img src="/img/detail5.jpg" data-src="/img/detail5.jpg" width="120px" class="pic"></div>
+            <div><img src="/img/detail1.jpg" data-src="/img/detail1.jpg" width="120px" class="pic"></div>
+            <div><img src="/img/detail2.jpg" data-src="/img/detail2.jpg" width="120px" class="pic"></div>
+            <div><img src="/img/detail3.jpg" data-src="/img/detail3.jpg" width="120px" class="pic"></div>
+            <div><img src="/img/detail4.jpg" data-src="/img/detail4.jpg" width="120px" class="pic"></div>
+        </div>
+        <div id="lightbox">
+            <img src="/img/detail5.jpg" alt="" id="lightboxImage">
+        </div>
+        <div>
+            <table>
+                <tr><td colspan="2"><div id="title">[컬러추가][페이크퍼/2온스누빔][made]하퍼 트렌치 패딩 코트</div>
+                <div id="titlesub">보들보들한 퍼 안감에 소매에는 2온스 누빔까지 깔끔하고 모던한 싱글 버튼 다지안은 물론, 여성스러운 라인감을 연출해주는 패딩이에요!!</div></td></tr>
+                <tr><td colspan="2"><div id="underline"></div></td></tr>
+                <tr><td><span id="price1">price</td><td><del id="price1">131,200원</del></span></td></tr>
+                <tr><td><span id="price2">price</td><td>118,000</span>원</td></tr>
+                <div id ="price3" hidden>9000</div>        
+                <tr><td><span>color</span></td><td><select>
+                    <option>색상을 선택해 주세요.</option>
+                    <option value="black">BLACK</option>
+                    <option value="beige">BEIGE</option>
+                </select></td></tr>
+                <tr><td><span>수량</span></td><td><div id="c_result"> 1 </div>
+                    <input type="button" onclick='count("plus")' class ="plus" value='+'>
+                    <input type="button" onclick='count("minus")' class="minus" value='-'></td></tr>
+                <tr><td colspan="2"><div id="underline"></div></td></tr>
+                <tr><td><span>총 상품 금액</span></td><td>
+                    <span id="total"><strong>118,000</strong></span>원
+                    <div id ="price" hidden>118000</div></span><span></span></td></tr>
+                <tr><td colspan="2"><div id="addtocart">ADD TO CART</div></td></tr>
+                <tr><td colspan="2"><div id="buynow">BUY NOW</div></td></tr>
+            </table>
+        </div>
+    </main>
+        <footer>
+            <div id="logo2"><img src="/img/footerlogo.PNG" width="100px"></div>
+        <div id="addr">STORE <span>(주)DearU</span> &nbsp; &nbsp; &nbsp; OWNER 지혁진  &nbsp; &nbsp; &nbsp; COMPANY REG.NO  &nbsp; 123-45-67890<br>ADDRESS &nbsp; &nbsp; 12345 서울시 종로구 하이미디어 15층 &nbsp; &nbsp; &nbsp; MASTER &nbsp; &nbsp; <span>지혁진 jhj930215@google.com</span></div>
+        <div id="sns">
+            <a href="#"><img src="/img/카카오톡.png" width="40px"></a>
+            <a href="#"><img src="/img/페이스북.png" width="40px"></a>
+            <a href="#"><img src="/img/인스타그램.png" width="40px"></a>
+        </div>
+          </footer>
+        </div>
+ <script>
+        var pics = document.getElementsByClassName("pic");
+        var lightboxImage = document.getElementById("lightboxImage");
+        for(var i = 0; i < pics.length; i++){
+            pics[i].addEventListener("click", showLightbox);
+        }
+
+        function showLightbox(){
+            var bigLocation = this.getAttribute("data-src");  
+            lightboxImage.setAttribute("src", bigLocation)
+        }
+        
+
+
+        function count(type)  {
+        // 결과를 표시할 element
+        const resultElement = document.getElementById('c_result');
+
+        // 현재 화면에 표시된 값
+        let number = resultElement.innerText;
+    
+        // 더하기/빼기
+        if(type === 'plus') {
+        number = parseInt(number) + 1;
+        
+        }else if(type === 'minus')  {
+        number = parseInt(number) - 1;
+        
+        if(number <= 0 ){
+            number = 1;
+        }
+        }
+
+        // 수량 개수 출력
+        resultElement.innerText = number;
+
+        // 총 금액 출력
+        const price = document.getElementById('price').innerText;
+        let totalcost = number * price ;
+        document.getElementById('total');
+        total.textContent = totalcost.toLocaleString('ko-KR');
+    }
+
+
+
+    </script>
+
+    
+</body>
+</html>

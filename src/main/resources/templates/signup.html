@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+body{
+    font-size:14px;
+    line-height: 20px;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: black
+}
+
+
+.member{
+    width: 400px;
+    margin: auto;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.member .logo{
+    display: block;
+    margin :50px auto;
+}
+
+.member .field{
+    margin :5px 0; 
+}
+
+.member b{
+    display: block; 
+    margin-bottom: 5px;
+}
+
+.member input:not(input[type=radio]),.member select{
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.field.birth div{ 
+    display: flex;
+    margin: 10px;
+}
+
+
+.field.tel-number div {
+    display: flex;
+}
+
+.field.tel-number div input:nth-child(1){
+    flex:2;
+}
+
+.field.tel-number div input:nth-child(2){
+    flex:1;
+}
+
+.field.gender div{
+    border: 1px solid rgba(164, 162, 162, 0.843);
+    padding: 15px 5px;
+    background-color: white;
+}
+
+
+@media (max-width:768px) {
+    .member{
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <body>
+    <form th:action="@{/member/create}" th:object="${memberForm}" method="post">
+        <div class="member">
+            <a href="index.html"><img class="logo" src="/img/login_logo.PNG"></a>
+            <div class="field">
+                <b>아이디</b>
+                <span class="placehold-text"><input type="text" name="username"></span>
+            </div>
+            <div class="field">
+                <b>비밀번호</b>
+                <input class="userpw" type="password" name="password1">
+            </div>
+            <div class="field">
+                <b>비밀번호 재확인</b>
+                <input class="userpw-confirm" type="password" name="password2">
+            </div>
+            <div class="field">
+                <b>이름</b>
+                <input type="text" name="Mname">
+            </div>
+            <div class="field birth">
+                <b>생년월일</b>
+                <div>
+                    <input type="text" name="birthday1" placeholder="년(4자)">                
+                    <select name="birthday2">
+                        <option value="01">1월</option>
+                        <option value="02">2월</option>
+                        <option value="03">3월</option>
+                        <option value="04">4월</option>
+                        <option value="05">5월</option>
+                        <option value="06">6월</option>
+                        <option value="07">7월</option>
+                        <option value="08">8월</option>
+                        <option value="09">9월</option>
+                        <option value="10">10월</option>
+                        <option value="11">11월</option>
+                        <option value="12">12월</option>
+                    </select>
+                    <input type="text" name="birthday3" placeholder="일">
+                </div>
+            </div>
+            <div class="field tel-number">
+                <b>휴대전화</b>
+                <input type="number" name="phonenum">
+            </div>
+            <div class="field tel-number">
+                <b>주소</b>
+                <input type="text" name="addr">
+            </div>
+            
+            <input type="submit" value="가입하기">
+            </form>
+    </body>
+</body>
+</html>

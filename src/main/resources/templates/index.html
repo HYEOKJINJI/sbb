@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
+</head>
+<body>
+      <div layout:fragment="content"> 
+        <main>
+            <div id="slideShow">
+                <div id="main">
+                    <div>
+                        <img class="slide1" src="/img/a1.jpg" style="width: 1200px;" height="300px">
+                    </div>
+                    <div>  
+                        <img class="slide1" src="/img/a2.jpg" style="width: 1200px;" height="300px">
+                    </div>
+                    <div>
+                        <img class="slide1" src="/img/a3.jpg" style="width: 1200px;" height="300px">
+                    </div>
+                    <div>
+                      <img class="slide1" src="/img/a4.jpg" style="width: 1200px;" height="300px">
+                    </div>
+                    <div>  
+                      <img class="slide1" src="/img/a5.jpg" style="width: 1200px;" height="300px">
+                    </div>
+                </div>
+            </div>
+            <div id="best">Weekly Best
+                <div id="new"><div id="arrivals"></div>
+                <div id="bestitem">
+                    <a th:href="@{/detail}">
+                    <div>
+                        <img src="/img/best1.PNG">
+                    </div>
+                    <div id="title1">[컬러추가][페이크퍼/2온스누빔][made]하퍼 트렌치 패딩 코트
+                        <div class="titlesub1">보들보들한 퍼 안감에 소매에는 2온스 누빔까지 깔끔하고 모던한 싱글 버튼 다지안은 물론, 여성스러운 라인감을 연출해주는 패딩이에요!!</div>
+                        <br><del class="price1">131,200원</del><br>
+                        <span class="price2">118,000원</span><span class="discount">10%</span>
+                    </div>
+                    </a>
+                </div>
+                <div id="bestitem">
+                    <div>
+                        <a href="detail2.html">
+                        <img src="/img/best2.PNG">
+                    </div>
+                    <div id="title2">[7일만특가][코마사♥/밴딩][made]멜팅 포근 코듀로이와이드 팬츠
+                        <div class="titlesub1">♥ 컬러에한번, 소재에 또 한번, 핏에 다시한번 놀라게 되는 팬츠..♥ 하체커버는 물론, 부드러우면서도 유연한 소재감과 넓은 밴딩이 편안한 착용감을 줍니다:)</div>
+                        <br><del class="price1">49,900원</del><br>
+                            <span class="price2">36,900원</span><span class="discount">26%</span>
+                        </a>
+                    </div>
+                </div>
+                <div id="bestitem">
+                    <div>
+                        <img src="/img/best3.PNG">
+                    </div>
+                    <div id="title3">[4만장돌파/밍크기모] 윈터 밍크 라이프 쫀득 슬림 부츠컷 팬츠
+                        <div class="titlesub1">밍크기모:따뜻한 밍크 원단으로 돌아온 쫀득 원조 아이템 ! 진짜 롱다리처럼 보이는 마법 팬츠!</div>
+                        <br><del class="price1">52,900원</del><br>
+                            <span class="price2">42,300원</span><span class="discount">20%</span>
+                    </div>
+                </div>
+                <div id="bestitem">
+                    <div>
+                        <img src="/img/best4.PNG">
+                    </div>
+                    <div id="title4">[4만장돌파/뉴컬러추가] 라이프 쫀득 롱다리 슬림 부츠컷 팬츠
+                        <div class="titlesub1">쫀득~쫀ㄷ그한 대박핏 슬랙스!! 스탠다드/롱 두가지 기장, 히든밴딩</div>
+                        <br><del class="price1">45,000원</del><br>
+                            <span class="price2">36,000원</span><span class="discount">20%</span>
+                    </div>
+                </div>
+                <div id="bestitem">
+                    <div>
+                        <img src="/img/best5.PNG">
+                    </div>
+                    <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                        <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                            <br><del class="price1">49,900원</del><br>
+                            <span class="price2">36,900원</span><span class="discount">26%</span>
+                    </div>
+                </div>
+            </div>  
+            <div id="js-load" class="main">
+                <ul class="lists">
+                  <li class="lists__item js-load">
+                    <div id="new"><div id="arrivals">New Arrivals</div>
+                    <div id="newitem">
+                    <div>
+                        <img src="/img/new1.PNG">
+                    </div>
+                    <div id="title5">[무료배송][숏,스탠다드] 멜팅 소프트 벨로아 팬츠
+                        <div class="titlesub1">보기만해도 부드러우면서 포근한 느낌으 주는 벨로아 팬츠. 러블리한 컬러감과 군살 부각 없는 깔끔함 핏감으로 한 컬러쯤 꼭 소장!! </div>
+                            <br><del class="price1">55,500원</del><br>
+                            <span class="price2">49,900원</span><span class="discount">26%</span>
+                    </div>
+                </div>
+                <div id="newitem">
+                    <div>
+                        <img src="/img/new2.PNG">
+                    </div>
+                    <div id="title5">[7일만특가]슈퍼파인울캐시 홀가먼트 페미닌 니트
+                        <div class="titlesub1">기본템일수록 가볍고 따뜻한 니트, 최고급 원사인 슈퍼파인메리노 울과 캐시미어 블랜디드! </div>
+                            <br><del class="price1">56,900원</del><br>
+                            <span class="price2">39,800원</span><span class="discount">30%</span>
+                    </div>
+                </div>
+                <div id="newitem">
+                    <div>
+                        <img src="/img/new3.PNG">
+                    </div>
+                    <div id="title5">[바지안감] 르나주 플레어 스커트
+                    <div class="titlesub1">여성스러운 무드의 플레어 디자인으로 체형커버까지 톡톡한 스커트에요 </div>
+                            <br><del class="price1"></del><br>
+                            <span class="price2">28,000원</span><span class="discount"></span>
+                    </div>
+                </div>
+                <div id="newitem">
+                    <div>
+                        <img src="/img/new4.PNG">
+                    </div>
+                    <div id="title5">Better Jeans 세미 와이드
+                    <div class="titlesub1">과하지 않고 적당히 여유 있게 떨어지는 세미 와이드 팬츠~! 예픈 핏에 뒷모습까지 완벽한 날씬해 보이는 팬츠 </div>
+                            <br><del class="price1">50,300원</del><br>
+                            <span class="price2">30,100원</span><span class="discount">40%</span>
+                    </div>
+                </div>
+                <div id="newitem">
+                    <div>
+                        <img src="/img/new5.PNG">
+                    </div>
+                    <div id="title5">쿠키 케이블 니트
+                    <div class="titlesub1">꽈베기+아가일 짜임으로 입체감이 느껴지는 사랑스러운 니트 </div>
+                            <br><del class="price1"></del><br>
+                            <span class="price2">32,400원</span><span class="discount"></span>
+                    </div>
+                </div>
+            </div>
+                  </li>
+                  <li class="lists__item js-load">
+                    <div id="new"><div id="arrivals"></div>
+                <div id="newitem">
+                    <div>
+                        <img src="/img/new6.PNG">
+                    </div>
+                    <div id="title5">[made]윈터 밍크 라이프 쫀득 슬림 부츠컷 팬츠
+                        <div class="titlesub1">밍크기모: 따뜻한 밍크 원단으로 돌아온 쫀득 원조 아이템! 진짜 롱다리처럼 보이는 마법 팬츠! </div>
+                            <br><del class="price1">55,500원</del><br>
+                            <span class="price2">49,900원</span><span class="discount">26%</span>
+                    </div>
+                </div>
+                <div id="newitem">
+                    <div>
+                        <img src="/img/new7.PNG">
+                    </div>
+                    <div id="title5">[made] 옥스포드 세미 루즈핏 셔츠
+                        <div class="titlesub1">구김을 최소화 한 원단으로 관리하기 편한 옥스포드 셔츠 퀄리티 높은 원단으로 컬러감도 너무 예쁩니다 </div>
+                            <br><del class="price1">42,000원</del><br>
+                            <span class="price2">33,600원</span><span class="discount">20%</span>
+                    </div>
+                </div>
+                <div id="newitem">
+                    <div>
+                        <img src="/img/new8.PNG">
+                    </div>
+                    <div id="title5">[1만장돌파] 슬림 스트레이트 jean
+                    <div class="titlesub1"> 날씬해 보이고 편한 롱버전이 출시 되었어요!!</div>
+                            <br><del class="price1">49,400원</del><br>
+                            <span class="price2">39,500원</span><span class="discount">20%</span>
+                    </div>
+                </div>
+                <div id="newitem">
+                    <div>
+                        <img src="/img/new9.PNG">
+                    </div>
+                    <div id="title5">[폭스25%, 율10%] 리얼 폭스 니트 가디건
+                    <div class="titlesub1">리얼 폭스원단과 울 블렌딩으로 포근함과 따뜻함은 물론 포슬하게 올라오는 헤어기가 매력적인 가디건입니다 </div>
+                            <br><del class="price1"></del><br>
+                            <span class="price2">28,000</span>
+                    </div>
+                </div>
+                <div id="newitem">
+                    <div>
+                        <img src="/img/new10.PNG">
+                    </div>
+                    <div id="title5">[1만장돌파] 에센셜 골지 라운드 니트 티
+                    <div class="titlesub1">필수소장 베이직템! 부담ㅇ없이 데일리로 입어주세요! 두께감있는 골지로 세련된무드 업 시켜드려요! </div>
+                            <br><del class="price1">19,500원</del><br>
+                            <span class="price2">15,600원</span><span class="discount">20%</span>
+                    </div>
+                </div>
+            </div>
+                  </li>
+                  <li class="lists__item js-load"><div id="new"><div id="arrivals"></div>
+                    <div id="newitem">
+                        <div>
+                            <img src="/img/new1.PNG">
+                        </div>
+                        <div id="title5">[무료배송][숏,스탠다드] 멜팅 소프트 벨로아 팬츠
+                            <div class="titlesub1">보기만해도 부드러우면서 포근한 느낌으 주는 벨로아 팬츠. 러블리한 컬러감과 군살 부각 없는 깔끔함 핏감으로 한 컬러쯤 꼭 소장!! </div>
+                                <br><del class="price1">55,500원</del><br>
+                                <span class="price2">49,900원</span><span class="discount">26%</span>
+                        </div>
+                    </div>
+                    <div id="newitem">
+                        <div>
+                            <img src="/img/new2.PNG">
+                        </div>
+                        <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                            <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                                <br><del class="price1">49,900원</del><br>
+                                <span class="price2">36,900원</span><span class="discount">26%</span>
+                        </div>
+                    </div>
+                    <div id="newitem">
+                        <div>
+                            <img src="/img/new3.PNG">
+                        </div>
+                        <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                        <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                                <br><del class="price1">49,900원</del><br>
+                                <span class="price2">36,900원</span><span class="discount">26%</span>
+                        </div>
+                    </div>
+                    <div id="newitem">
+                        <div>
+                            <img src="/img/new4.PNG">
+                        </div>
+                        <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                        <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                                <br><del class="price1">49,900원</del><br>
+                                <span class="price2">36,900원</span><span class="discount">26%</span>
+                        </div>
+                    </div>
+                    <div id="newitem">
+                        <div>
+                            <img src="/img/new5.PNG">
+                        </div>
+                        <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                        <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                                <br><del class="price1">49,900원</del><br>
+                                <span class="price2">36,900원</span><span class="discount">26%</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="lists__item js-load">
+                <div id="new"><div id="arrivals"></div>
+                <div id="newitem">
+                <div>
+                    <img src="/img/new1.PNG">
+                </div>
+                <div id="title5">[무료배송][숏,스탠다드] 멜팅 소프트 벨로아 팬츠
+                    <div class="titlesub1">보기만해도 부드러우면서 포근한 느낌으 주는 벨로아 팬츠. 러블리한 컬러감과 군살 부각 없는 깔끔함 핏감으로 한 컬러쯤 꼭 소장!! </div>
+                        <br><del class="price1">55,500원</del><br>
+                        <span class="price2">49,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new2.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                    <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new3.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new4.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new5.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+        </div>
+              </li>
+              <li class="lists__item js-load">
+                <div id="new"><div id="arrivals"></div>
+                <div id="newitem">
+                <div>
+                    <img src="/img/new1.PNG">
+                </div>
+                <div id="title5">[무료배송][숏,스탠다드] 멜팅 소프트 벨로아 팬츠
+                    <div class="titlesub1">보기만해도 부드러우면서 포근한 느낌으 주는 벨로아 팬츠. 러블리한 컬러감과 군살 부각 없는 깔끔함 핏감으로 한 컬러쯤 꼭 소장!! </div>
+                        <br><del class="price1">55,500원</del><br>
+                        <span class="price2">49,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new2.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                    <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new3.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new4.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new5.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+        </div>
+              </li>
+              <li class="lists__item js-load">
+                <div id="new"><div id="arrivals"></div>
+                <div id="newitem">
+                <div>
+                    <img src="/img/new1.PNG">
+                </div>
+                <div id="title5">[무료배송][숏,스탠다드] 멜팅 소프트 벨로아 팬츠
+                    <div class="titlesub1">보기만해도 부드러우면서 포근한 느낌으 주는 벨로아 팬츠. 러블리한 컬러감과 군살 부각 없는 깔끔함 핏감으로 한 컬러쯤 꼭 소장!! </div>
+                        <br><del class="price1">55,500원</del><br>
+                        <span class="price2">49,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new2.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                    <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new3.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new4.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new5.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+        </div>
+              </li>
+              <li class="lists__item js-load">
+                <div id="new"><div id="arrivals"></div>
+                <div id="newitem">
+                <div>
+                    <img src="/img/new1.PNG">
+                </div>
+                <div id="title5">[무료배송][숏,스탠다드] 멜팅 소프트 벨로아 팬츠
+                    <div class="titlesub1">보기만해도 부드러우면서 포근한 느낌으 주는 벨로아 팬츠. 러블리한 컬러감과 군살 부각 없는 깔끔함 핏감으로 한 컬러쯤 꼭 소장!! </div>
+                        <br><del class="price1">55,500원</del><br>
+                        <span class="price2">49,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new2.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                    <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new3.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new4.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new5.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+        </div>
+              </li>
+              <li class="lists__item js-load">
+                <div id="new"><div id="arrivals"></div>
+                <div id="newitem">
+                <div>
+                    <img src="/img/new1.PNG">
+                </div>
+                <div id="title5">[무료배송][숏,스탠다드] 멜팅 소프트 벨로아 팬츠
+                    <div class="titlesub1">보기만해도 부드러우면서 포근한 느낌으 주는 벨로아 팬츠. 러블리한 컬러감과 군살 부각 없는 깔끔함 핏감으로 한 컬러쯤 꼭 소장!! </div>
+                        <br><del class="price1">55,500원</del><br>
+                        <span class="price2">49,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new2.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                    <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new3.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new4.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new5.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+        </div>
+              </li>
+              <li class="lists__item js-load">
+                <div id="new"><div id="arrivals"></div>
+                <div id="newitem">
+                <div>
+                    <img src="/img/new1.PNG">
+                </div>
+                <div id="title5">[무료배송][숏,스탠다드] 멜팅 소프트 벨로아 팬츠
+                    <div class="titlesub1">보기만해도 부드러우면서 포근한 느낌으 주는 벨로아 팬츠. 러블리한 컬러감과 군살 부각 없는 깔끔함 핏감으로 한 컬러쯤 꼭 소장!! </div>
+                        <br><del class="price1">55,500원</del><br>
+                        <span class="price2">49,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new2.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                    <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new3.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new4.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new5.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+        </div>
+              </li>
+              <li class="lists__item js-load">
+                <div id="new"><div id="arrivals"></div>
+                <div id="newitem">
+                <div>
+                    <img src="/img/new1.PNG">
+                </div>
+                <div id="title5">[무료배송][숏,스탠다드] 멜팅 소프트 벨로아 팬츠
+                    <div class="titlesub1">보기만해도 부드러우면서 포근한 느낌으 주는 벨로아 팬츠. 러블리한 컬러감과 군살 부각 없는 깔끔함 핏감으로 한 컬러쯤 꼭 소장!! </div>
+                        <br><del class="price1">55,500원</del><br>
+                        <span class="price2">49,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new2.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                    <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new3.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new4.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+            <div id="newitem">
+                <div>
+                    <img src="/img/new5.PNG">
+                </div>
+                <div id="title5">[7일만특가]멜팅 포근 코듀로이와이드 팬츠
+                <div class="titlesub1">매 시즌 그 계절에 어울리는 소재를 선택하고 있는데 코듀로이 특유의 웜한 무드가 보기만해도 부드럽고 포근한 느낌을 줍니다!! </div>
+                        <br><del class="price1">49,900원</del><br>
+                        <span class="price2">36,900원</span><span class="discount">26%</span>
+                </div>
+            </div>
+        </div>
+              </li>
+                </ul>
+                <div id="js-btn-wrap" class="btn-wrap"> <a href="javascript:;" class="button">V</a> </div>
+              </div>
+              <footer>
+                <div id="logo2"><img src="/img/footerlogo.PNG" width="100px"></div>
+            <div id="addr">STORE <span>(주)DearU</span> &nbsp; &nbsp; &nbsp; OWNER 지혁진  &nbsp; &nbsp; &nbsp; COMPANY REG.NO  &nbsp; 123-45-67890<br>ADDRESS &nbsp; &nbsp; 12345 서울시 종로구 하이미디어 15층 &nbsp; &nbsp; &nbsp; MASTER &nbsp; &nbsp; <span>지혁진 jhj930215@google.com</span></div>
+            <div id="sns">
+                <a href="#"><img src="/img/카카오톡.png" width="40px"></a>
+                <a href="#"><img src="/img/페이스북.png" width="40px"></a>
+                <a href="#"><img src="/img/인스타그램.png" width="40px"></a>
+            </div>
+              </footer>
+            </div>
+        </main>
+        <aside>
+            <div id="sidemenu">
+                <div>
+                    <a href="#"><img src="/img/asd.png" width="30px"></a>
+                </div>
+                <div>
+                    <a href="#"><img src="/img/cart.png" width="30px"></a>
+                </div>
+                <div>
+                    <a href="#"><img src="/img/call.png" width="30px"></a>
+                </div>
+            </div>
+        </aside>
+        <button id="btnn" onClick="GoTop()"><div class="top">▲</div><div class="top">TOP</div></button>
+    </div>
+</body>
+</html>

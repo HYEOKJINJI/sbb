@@ -1,0 +1,308 @@
+@charset "UTF-8";
+
+        body{
+            font-family: "serif";
+            background-color: rgb(224, 220, 220);
+        }
+        a{
+            text-decoration: none;
+        }
+        li{
+            list-style: none;
+        }
+
+        header{
+            width: 1200px;
+            height: 90px;
+            position: fixed;
+            background-color: rgb(212, 211, 211);
+            margin-top: -10px;
+            z-index: 2;
+        }
+        main{
+            width: 1200px;
+            height: 1500px;
+            margin-top: 90px;
+        }
+        #log div{
+            float: left;
+            padding-right: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            
+        }
+        #category div{
+            font-weight: bold;
+            padding-top: 5px;
+            cursor: pointer;
+            transition-duration: 1s;
+            margin-top: 3px;
+            color: white;
+            width: 100px;
+        }
+        #logo{
+            margin: 10px 0 0 30px;
+            float: left;
+            width: 200px;
+            height: 40px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        #log{
+            float: right;
+            color: white;
+            position: absolute;
+            right: 0;
+        }
+        #log a{
+            color: white;
+        }
+        #category{
+            height: 30px;
+            margin-top: 60px;
+            overflow: hidden;
+            z-index: 1;
+            float: left;
+            width: 100px;
+            margin-left: 2px;
+            margin-right: 20px;
+        }
+        #category > li {
+            float: left;
+        }
+        #main{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 6000px;
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+        #best{
+            padding-top: 100px;
+        }
+        #new{
+            height:500px;
+        }
+        #new #bestitem{
+            float: left;
+            padding-top: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #new #newitem{
+            float: left;
+            padding-top: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #newitem img:hover{
+            box-shadow: 1px 1px 10px;
+        }
+        main div{
+            text-align: center;
+        }
+        #sidemenu{
+            right: 0;
+            position: fixed;
+            top: 500px;
+        }
+        #sidemenu div{
+            cursor: pointer;
+        }
+        footer{
+            margin-top: 70px;
+            height: 90px;
+            width: 1200px;
+            background-color: rgb(224, 220, 220);
+        }
+        footer div{
+            float: left;
+        }
+        #logo2{
+            margin-left: 30px;
+            font-size: 20px;
+            margin-top: 50px;
+        }
+        #addr{
+            margin-top: 50px;
+            margin-left: 100px;
+            font-size: 12px;
+            color: grey;
+        }
+        #addr span{
+            color: black;
+            font-weight: bold;
+        }
+        #sns{
+            float: right;
+            margin-top: 20px;
+        }
+        #wrap{
+            margin: 0 auto;
+            width: 1200px;
+            border: 1px solid rgb(224, 220, 220);
+        }
+        #bestmenu div{
+           float: left;
+           margin-left: 90px;
+           margin-top: 20px;
+           cursor: pointer;
+        }
+
+        #title1,#title2,#title3,#title4,#title5{
+            width: 180px;
+            float: left;
+            height: 200px;
+            margin-left: 16px;
+            margin-right: 13px;
+            font-size: 15px;
+            font-weight: bold;  
+            font-family: '고딕';          
+        }
+        #title{
+            margin-left: 70px;
+        }
+        .titlesub1{
+            font-weight: lighter;
+            color: grey;
+            font-size: 13px;
+            padding-top: 5px;
+        }
+        .price1{
+            color: grey;
+            font-size: 12px;
+        }
+        .price2{
+            font-size: 14px;
+        }
+        .discount{
+            font-size: 12px;
+            margin-left: 5px;
+            color: grey;
+        }
+        #slideShow{
+            width: 1200px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        #main div:not(:last-child){
+            float: left;
+            margin-right: 100px;
+        }
+        #main div{
+            float: left;
+        }
+        #bestitem_a img{
+            padding-top: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #bestitem_b{
+            display: none;
+        }
+
+        .menu > li{
+            float: left;
+            text-align: center;
+            width: 100px;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-top: 30px;
+            cursor: pointer;
+
+        }
+        .submenu > li{
+            line-height: 30px;
+            font-size: 14px;
+            margin-left: -25px;
+            width: 70px;
+            cursor: pointer;
+        }
+        .submenu {
+            height: 0;
+            overflow: hidden;
+        }
+        .menu > li:hover {
+            background-color: rgba(190, 186, 186, 0.837);
+            transition-duration: 0.5s;
+        }
+
+        .menu > li:hover .submenu {
+            height: 145px; /*서브메뉴 li한개의 높이 50*5*/
+            transition-duration: 1s;
+        }
+        .submenu li {
+            width: 100px;
+            margin-left: -40px;
+        }
+        .submenu li:hover{
+            background-color: rgba(215, 211, 211, 0.837);
+
+        }
+        #arrivals{
+            margin-top: 30px;
+        }
+        #btnn{
+            position: fixed;
+            bottom: 100px;
+            right: 0;
+            z-index: 99;
+            border: none;
+            font-size: 20px;
+            padding: 15px;
+            background-color: rgb(224, 220, 220);
+            color: rgb(79, 78, 78);
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .js-load {
+            display: none;
+        }
+        .js-load.active {
+            display: block;
+        }
+        .is_comp.js-load:after {
+            display: none;
+        }
+        .btn-wrap, .lists, .main {
+            display: block;
+        }
+        .main {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+        .lists {
+            margin-bottom: 4rem;
+            padding: 0px;
+        }
+        .lists__item {
+            padding: 0px;
+        }
+        .btn-wrap {
+            text-align: center;
+        }
+        #bestitem img:hover{
+            box-shadow: 1px 1px 10px;
+        }
+        #js-btn-wrap{
+            border: none;
+            width: 30px;
+            border-radius: 15px;
+            font-size: 25px;
+            margin: 0 auto;
+            background-color: rgb(211, 209, 209);
+        }
+        #js-btn-wrap a {
+            color: rgb(5, 5, 5);
+        }
+        #js-btn-wrap:hover{
+            box-shadow: 1px 1px 10px;
+        }
+        .top{
+            font-size: 14px;
+        }
+        #bestitem a {
+            color: black;
+        }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	
+<!-- Bootstrap CSS Import -->
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
+
+<!-- sbb CSS -->
+<link rel="stylesheet" type="text/css" th:href="@{/index.css}">
+
+<title>탬플릿 html (view 페이지 생성시 기본적용)</title>
+</head>
+<body>
+	<!-- 최상단의 네비게이션 바 (Nav Bar)
+	<nav
+		class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/">SBB</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" d ata-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-l
+				abel="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link" href="#">로그인</a></li>
+				</ul>
+			</div>	
+		</div>
+	</nav>
+	-->
+	
+	<!-- 외부의 navbar.html import -->
+	<nav th:replace="~{navBar::navbarFragment}"></nav>
+	
+	<!-- 기본 탬플릿에 삽입될 내용 - Start -->
+	<th:block layout:fragment="content"></th:block>
+	<!-- 기본 탬플릿에 삽입될 내용 - End -->
+
+	<!-- 부트스트랩 자바 스크립트 import -->
+	<script th:src="@{/bootstrap.min.js}"></script>
+	
+	<!-- 자바스크립트 start -->
+	<th:block layout:fragment="script"></th:block>
+	<!-- 자바스크립트 end -->
+</body>
+</html>

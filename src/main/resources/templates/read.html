@@ -1,0 +1,215 @@
+<html layout:decorate="~{layout1}">
+
+<div layout:fragment="content" class="container my-3">
+	<!-- 질문 -->
+
+	<div id="wrap">
+        <header>
+            <div id="logo"><a th:href="@{/}"><img src="/img/logo.PNG" width="100px"></a></div>
+            <div id="log">
+                <div><a th:href="@{/member/login}" sec:authorize="isAnonymous()">LOGIN</a>
+                	<a th:href="@{/user/logout}" sec:authorize="isAuthenticated()">LOGOUT</a>
+                </div>
+                <div>CART</div>
+                <div>REVIEW</div>
+                <div><a th:href="@{/question/list}">Q & A</a></div>
+            </div>
+            <ul class="menu">
+                <li>
+                  <p>OUTER</p>
+                  <ul class="submenu">
+                    <li>코트</li>
+                    <li>패딩</li>
+                    <li>에코퍼</li>
+                    <li>자켓</li>
+                  </ul>
+                </li>
+                <li>
+                  <p>DRESS</p>
+                  <ul class="submenu">
+                    <li>롱</li>
+                    <li>미니</li>
+                    <li>H라인</li>
+                    <li>A라인</li>
+                  </ul>
+                </li>
+                <li>
+                    <p>KNIT/TEE</p>
+                    <ul class="submenu">
+                      <li>니트</li>
+                      <li>가디건</li>
+                      <li>티</li>
+                      <li></li>
+                    </ul>
+                  </li>
+                <li>
+                  <p>BLOUSE</p>
+                  <ul class="submenu">
+                    <li>무지</li>
+                    <li>셔츠</li>
+                    <li>프린트</li>
+                    <li>오프숄더</li>
+                  </ul>
+                </li>
+                <li>
+                    <p>PANTS</p>
+                  <ul class="submenu">
+                    <li>데님</li>
+                    <li>슬렉스</li>
+                    <li>숏팬츠</li>
+                    <li>기모</li>
+                  </ul>
+                </li>
+                <li>
+                  <p>SKIRTS</p>
+                  <ul class="submenu">
+                    <li>H라인</li>
+                    <li>A라인</li>
+                    <li>미니스커트</li>
+                    <li>롱스커트</li>
+                  </ul>
+                </li>
+                  <li>
+                    <p>ACC</p>
+                    <ul class="submenu">
+                      <li>악세사리</li>
+                      <li>스카프</li>
+                    </ul>
+                  </li>
+              </ul>
+        </header>
+        <div class="qwer">
+        	<h2 class="border-bottom py-2" th:text="${question.subject}"></h2>
+	<div class="card my-3">
+		<div class="card-body">
+			<div class="card-text"
+			th:text="${question.content}"></div>
+			<div class="d-flex justify-content-end">
+				<div th:if="${question.modifyDate != null}"
+					class="badge bg-light text-dark p-2 text-start mx-3">
+					<div class="mb-2">수정됨</div>
+					<div
+						th:text="${#temporals.format(question.modifyDate, 'yyyy-MM-dd HH:mm')}"></div>
+				</div>
+				<div class="badge bg-light text-dark p-2 text-start">
+					<div class="mb-2">
+						<span th:if="${question.author !=null}"
+							th:text="${question.author.username}"></span> <span
+							th:if="${question.author != null}"
+							th:text="${question.author.name}"></span>
+					</div>
+					<div
+						th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm')}"></div>
+				</div>
+			</div>
+			<div class="my-3">
+				<div class="my-3">
+					<a href="javascript:void(0);"
+						class="recommend btn btn-sm btn-outline-secondary"
+						th:data-uri="@{|/question/vote/${question.id}|}"> 추천 <span
+						class="badge rounded-pill bg-success"
+						th:text="${#lists.size(question.voter)}"></span>
+					</a> <a th:href="@{|/question/modify/${question.id}|}"
+						class="btn btn-sm btn-outline-secondary"
+						sec:authorize="isAuthenticated()"
+						th:if="${question.author != null and #authentication.getPrincipal().getUsername() == question.author.username}"
+						th:text="수정"></a> <a href="javascript:void(0);"
+						th:data-uri="@{|/question/delete/${question.id}|}"
+						class="delete btn btn-sm btn-outline-secondary"
+						sec:authorize="isAuthenticated()"
+						th:if="${question.author != null and #authentication.getPrincipal().getUsername() == question.author.username}"
+						th:text="삭제"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 답변의 갯수 표시 -->
+	<h5 class="border-bottom my-3 py-2"
+		th:text="|${#lists.size(question.answerList)}개의 답변이 있습니다.|"></h5>
+
+	<!-- 답변 반복 시작 -->
+	<div class="card my-3" th:each="answer : ${question.answerList}">
+		<a th:id="|answer_${answer.id}|"></a>
+		<div class="card-body">
+			<div class="card-text"
+				th:text="${@answer.content}"></div>
+			<div class="d-flex justify-content-end">
+				<div th:if="${answer.modifyDate != null}"
+					class="badge bg-light text-dark p-2 text-start mx-3">
+					<div class="mb-2">modified at</div>
+					<div
+						th:text="${#temporals.format(answer.modifyDate, 'yyyy-MM-dd HH:mm')}"></div>
+				</div>
+				<div class="badge bg-light text-dark p-2 text-start">
+					<div class="mb-2">
+						<span th:if="${answer.author != null}"
+							th:text="${answer.author.username}"></span>
+					</div>
+					<div
+						th:text="${#temporals.format(answer.createDate, 'yyyy-MM-dd HH:mm')}">
+					</div>
+				</div>
+			</div>
+			<div class="my-3">
+				<a href="javascript:void(0);"
+					class="recommend btn btn-sm btn-outline-secondary"
+					th:data-uri="@{|/answer/vote/${answer.id}|}"> 추천 <span
+					class="badge rounded-pill bg-success"
+					th:text="${#lists.size(answer.voter)}"></span>
+				</a> <a th:href="@{|/answer/modify/${answer.id}|}"
+					class="btn btn-sm btn-outline-secondary"
+					sec:authorize="isAuthenticated()"
+					th:if="${answer.author != null and #authentication.getPrincipal().getUsername() == answer.author.username}"
+					th:text="수정"></a> <a href="javascript:void(0);"
+					th:data-uri="@{|/answer/delete/${answer.id}|}"
+					class="delete btn btn-sm btn-outline-secondary"
+					sec:authorize="isAuthenticated()"
+					th:if="${answer.author != null and #authentication.getPrincipal().getUsername() == answer.author.username}"
+					th:text="삭제"></a>
+			</div>
+		</div>
+	</div>
+	<!-- 답변 반복 끝 -->
+	<!-- 답변 작성 -->
+	<form th:action="@{|/answer/create/${question.id}|}"
+		th:object="${answerForm}" method="post" class="my-3">
+
+		<!-- 외부 파일 -->
+		<!-- <div th:replace="~{form_errors::formErrorsFragment}"></div> -->
+
+		<!-- 내부 파일-->
+	<div class="alert alert-danger" role="alert" th:if="${#fields.hasAnyErrors()}">
+		<div th:each="err: ${#fields.allErrors()}" th:text="${err}"></div>
+	</div>
+	
+		<textarea sec:authorize="isAnonymous()" disabled th:field="*{content}"
+			rows="10" class="form-control"></textarea>
+		<textarea sec:authorize="isAuthenticated()" th:field="*{content}"
+			class="form-control" rows="10"></textarea>
+		<input type="submit" value="답변등록" class="btn btn-primary my-2">
+	</form>
+</div>
+</div>
+<script layout:fragment="script" type='text/javascript'>
+	const delete_elements = document.getElementsByClassName("delete");
+	Array.from(delete_elements).forEach(function(element) {
+		element.addEventListener('click', function() {
+			if (confirm("정말로 삭제하시겠습니까?")) {
+				location.href = this.dataset.uri;
+			}
+			;
+		});
+	});
+
+	const recommend_elements = document.getElementsByClassName("recommend");
+	Array.from(recommend_elements).forEach(function(element) {
+		element.addEventListener('click', function() {
+			if (confirm("정말로 추천하시겠습니까?")) {
+				location.href = this.dataset.uri;
+			}
+			;
+
+		});
+	})
+</script>
+</html>

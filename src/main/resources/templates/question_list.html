@@ -1,0 +1,166 @@
+<html layout:decorate="~{layout1}">
+
+<div layout:fragment="content" class="container my-3">
+    <div class="row my-3">
+        <div class="col-6">
+            <a th:href="@{/question/create}" id = "question_btn">질문 등록하기</a>
+        </div>
+        <div id="col-6">
+            <div class="input-group">
+                <input type="text" id="search_kw" class="form-control" th:value="${kw}">
+                <button class="btn btn-outline-secondary" type="button" id="btn_search">찾기</button>
+            </div>
+        </div>
+    </div>    <div id="wrap">
+        <header>
+            <div id="logo"><a th:href="@{/}"><img src="/img/logo.PNG" width="100px"></a></div>
+            <div id="log">
+                <div><a th:href="@{/member/login}" sec:authorize="isAnonymous()">LOGIN</a>
+                	<a th:href="@{/user/logout}" sec:authorize="isAuthenticated()">LOGOUT</a>
+                </div>
+                <div>CART</div>
+                <div>REVIEW</div>
+                <div><a th:href="@{/question/list}">Q & A</a></div>
+            </div>
+            <ul class="menu">
+                <li>
+                  <p>OUTER</p>
+                  <ul class="submenu">
+                    <li>코트</li>
+                    <li>패딩</li>
+                    <li>에코퍼</li>
+                    <li>자켓</li>
+                  </ul>
+                </li>
+                <li>
+                  <p>DRESS</p>
+                  <ul class="submenu">
+                    <li>롱</li>
+                    <li>미니</li>
+                    <li>H라인</li>
+                    <li>A라인</li>
+                  </ul>
+                </li>
+                <li>
+                    <p>KNIT/TEE</p>
+                    <ul class="submenu">
+                      <li>니트</li>
+                      <li>가디건</li>
+                      <li>티</li>
+                      <li></li>
+                    </ul>
+                  </li>
+                <li>
+                  <p>BLOUSE</p>
+                  <ul class="submenu">
+                    <li>무지</li>
+                    <li>셔츠</li>
+                    <li>프린트</li>
+                    <li>오프숄더</li>
+                  </ul>
+                </li>
+                <li>
+                    <p>PANTS</p>
+                  <ul class="submenu">
+                    <li>데님</li>
+                    <li>슬렉스</li>
+                    <li>숏팬츠</li>
+                    <li>기모</li>
+                  </ul>
+                </li>
+                <li>
+                  <p>SKIRTS</p>
+                  <ul class="submenu">
+                    <li>H라인</li>
+                    <li>A라인</li>
+                    <li>미니스커트</li>
+                    <li>롱스커트</li>
+                  </ul>
+                </li>
+                  <li>
+                    <p>ACC</p>
+                    <ul class="submenu">
+                      <li>악세사리</li>
+                      <li>스카프</li>
+                    </ul>
+                  </li>
+              </ul>
+        </header>
+<table class="table">
+    <thead class="table-dark">
+        <!-- 제목을 처리 -->
+        <tr class="text-center">
+            <th>번호</th>
+            <th style="width:50%">제목</th>
+            <th>글쓴이</th>
+            <th>작성일시</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- 테이블의 내용을 출력 블락 -->
+        <!-- Thymeleaf(타임리프)를 사용해서 루프 돌려서 출력 -->
+<tr class="text-center" th:each="question, loop : ${paging}">
+    <td th:text="${paging.getTotalElements() - (paging.getNumber() * paging.getSize()) - loop.index}">번호</td>
+    <td class="text-start">
+        <span th:if="${question.author == null or question.author.username == #authentication.name or #authorization.expression('hasAuthority(''ROLE_ADMIN'')')}"
+            ><a th:href="@{|/question/read/${question.id}|}" th:text="${question.subject}">제목</a></span>
+        <span th:if="${question.author != null and question.author.username != #authentication.name and not #authorization.expression('hasAuthority(''ROLE_ADMIN'')')}"
+            th:text="${question.subject}">제목</span>
+        <span class="text-danger small ms-2" th:if="${#lists.size(question.answerList)>0}" th:text="${#lists.size(question.answerList)}"></span>
+    </td>
+    <td><span th:if="${question.author != null}" th:text="${question.author.username}"></span></td>
+    <td>[[${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm')}]]</td>
+</tr>
+    </tbody>
+</table>
+	
+	<!-- 페이징 처리 시작 -->
+	<div th:if="${!paging.isEmpty()}">
+		<ul class="pagination justify-content-center">
+		
+			<!-- 이전 페이지가 존재하지 않으면 이전에 링크를 비활성화 -->
+			<li class="page-item" th:classappend="${!paging.hasPrevious}? 'disabled'">
+				
+				<!-- paging.number : 현재 페이지 -->
+				<a class="page-link" href="javascript:void(0)" th:data-page="${paging.number-1}">
+					<span>이전</span>
+				</a>
+			</li>
+			
+			<!-- 첫페이지 부터 마지막 페이지까지 루프를 돌려서 출력 -->
+			<li th:each="page:${#numbers.sequence(0, paging.totalPages-1)}"
+				th:if="${page>=paging.number-5 and page<=paging.number+5}"
+				th:classappend="${page==paging.number}? 'active'" class="page-item">
+				<a th:text="${page}" class="page-link" href="javascript:void(0)" th:data-page="${page}"></a>
+			</li>
+			
+			<!-- 다음 페이지가 존재하지 않으면 이전에 링크를 비활성화 -->
+			<li class="page-item" th:classappend="${!paging.hasNext}? 'disabled'">
+				<a class="page-link" href="javascript:void(0)" th:data-page="${paging.number+1}">
+					<span>다음</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- 페이징 처리 끝 -->
+    <form th:action="@{/question/list}" method="get" id="searchForm">
+        <input type="hidden" id="kw" name="kw" th:value="${kw}">
+        <input type="hidden" id="page" name="page" th:value="${paging.number}">
+    </form>
+</div>
+<script layout:fragment="script" type='text/javascript'>
+const page_elements = document.getElementsByClassName("page-link");
+Array.from(page_elements).forEach(function(element) {
+    element.addEventListener('click', function() {
+        document.getElementById('page').value = this.dataset.page;
+        document.getElementById('searchForm').submit();
+    });
+});
+const btn_search = document.getElementById("btn_search");
+btn_search.addEventListener('click', function() {
+    document.getElementById('kw').value = document.getElementById('search_kw').value;
+    document.getElementById('page').value = 0;  // 검색버튼을 클릭할 경우 0페이지부터 조회한다.
+    document.getElementById('searchForm').submit();
+});
+</script>
+</html>
